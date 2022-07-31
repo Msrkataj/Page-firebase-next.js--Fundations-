@@ -1,0 +1,60 @@
+.section-steps {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-weight: bold;
+  margin: 20px 0;
+
+  .section-steps-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    h1 {
+      font-size: 1.1rem;
+      position: relative;
+    }
+  }
+  .steps {
+    display: flex;
+    font-size: 0.8rem;
+
+    div {
+      padding: 5px;
+      text-align: center;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+
+      p {
+        margin-top: 15px;
+        position: relative;
+        &::before {
+          content: '';
+          position: absolute;
+          height: 1px;
+          top: -20%;
+          background: $color-grey;
+        }
+      }
+    }
+  }
+}
+.steps :nth-child(1) p::before {
+  width: 50px;
+}
+
+.steps :nth-child(2) p::before {
+  width: 40px;
+}
+
+.steps :nth-child(3) p::before {
+  left: 24%;
+  width: 45px;
+
+}
+
+.steps :nth-child(4) p::before {
+    left: 28%;
+  width: 50px;
+
+}

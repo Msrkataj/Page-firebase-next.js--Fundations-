@@ -1,4 +1,6 @@
 import Link from 'next/link'
+import Image from "next/image";
+import React from "react";
 
 const HomeFirst = () => {
 
@@ -13,6 +15,23 @@ const HomeFirst = () => {
                     </div>
                     <div className="header-down-login">ZAŁÓŻ KONTO</div>
                 </div>
+            <div className="header-desktop">
+                <Image src="/assets/assets/Home-Hero-Image.jpg" height={500} width={500} alt=""/>
+                <div className="header-desktop-info">
+                    <h1>Zacznij pomagać! Oddaj niechciane rzeczy w zaufane ręce</h1>
+                    <div className="header-desktop-info-buttons">
+
+                        <Link href="../Login/Login.js">
+                            <a className="info-button">ODDAJ RZECZY</a>
+                        </Link>
+
+                        <Link href="../Login/Login.js">
+                            <a className="info-button">ZORGANIZUJ ZBIÓRKĘ</a>
+                        </Link>
+
+                    </div>
+                </div>
+            </div>
         </>
     )
 }

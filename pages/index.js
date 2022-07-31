@@ -1,5 +1,10 @@
 import HomeHeader from "./Home/HomeHeader";
 import HeaderFirst from "./Home/Header-first";
+import FoursSteps from "./Home/FoursSteps";
+import HomeThreeColumns from "./Home/HomeThreeColumns";
+import Question from "./Home/Question";
+import Footer from "./Home/Footer";
+
 
 
 export default function Home() {
@@ -8,7 +13,10 @@ export default function Home() {
         <>
             <HomeHeader/>
             <HeaderFirst/>
-            {/*<HomeThreeColumns/>*/}
+            <FoursSteps/>
+            <HomeThreeColumns/>
+            <Question/>
+            <Footer/>
         </>
     );
 }

@@ -1,0 +1,42 @@
+.who-helps {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+  background: $color-grey-white;
+  padding-top: 10px;
+
+
+  .who-helps-header {
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .who-helps-buttons {
+    font-size: 0.7rem;
+    display: flex;
+    justify-content: center;
+
+    .who-helps-column {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .who-helps-button {
+        width: 100px;
+        height: 90px;
+        border-radius: 50%;
+        font-weight: bold;
+        //border: 1px solid $color-grey;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background: $color-yellow;
+      }
+      p {
+        margin: 10px 15px;
+      }
+    }
+  }
+}

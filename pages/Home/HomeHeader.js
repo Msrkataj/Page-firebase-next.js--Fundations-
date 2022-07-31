@@ -12,7 +12,7 @@ const HomeHeader = () => {
         },
         {
             name: "O co chodzi?",
-            Link: "/what"
+            Link: "./Why"
         },
         {
             name: "O nas",
@@ -39,10 +39,33 @@ const HomeHeader = () => {
                         <div onClick={() => setActive(!active)}>
                             <div className={active ? "activeHamburger" : "hamburber"}/>
                         </div>
+                        <div className="nav">
+                            <div className="nav-login">
+                            <Link href="../Login/Login.js">
+                                <a className="nav-login-button nav-login-button-first">Zaloguj</a>
+                            </Link>
+                            <Link href="../Login/Login.js">
+                                <a className="nav-login-button">Załóż konto</a>
+                            </Link>
+                            </div>
+                        <ul>
+                            {data.map((item, i) => (
+                                // eslint-disable-next-line react/jsx-key
+                                <Link href={item.Link}>
+                                    <li key={i}>
+                                        <a href="#" className={"a"}>
+                                            {item.name}
+                                        </a>
+                                    </li>
+                                </Link>
+                            ))}
+                        </ul>
+                        </div>
                     </div>
-                    <div className={active ? "activeSidenav" : "sidenav"}>
+                    <div className={active ? "activeSidenav " : "sidenav "}>
                         <ul className={"ul"}>
                             {data.map((item, i) => (
+                                // eslint-disable-next-line react/jsx-key
                                 <Link href={item.Link}>
                                     <li key={i}>
                                         <a href="#" className={"a"}>

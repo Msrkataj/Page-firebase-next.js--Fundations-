@@ -2,10 +2,18 @@
 @import "./settings/_fonts.scss";
 @import "reset";
 @import "Home.module";
-
+@import "FoursSteps";
+@import "HomeThreeColumns";
+@import "Question";
+@import "Footer";
+@import "settings/mixins.scss";
 
 body {
 font-family: $font-base;
   font-size: 16px;
   color: $color-grey;
+}
+
+a {
+  text-decoration: none;
 }

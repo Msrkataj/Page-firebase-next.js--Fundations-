@@ -1,0 +1,27 @@
+.footer {
+  background: $color-yellow;
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+  padding: 20px;
+  font-size: 0.9rem;
+  a {
+    color: $color-grey;
+  }
+  .contact {
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    a {
+      margin-left: 10px ;
+    }
+  }
+  .info-ul {
+    display: flex;
+    flex-direction: column;
+    li {
+      padding: 0;
+
+    }
+  }
+}
