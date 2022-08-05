@@ -2,59 +2,163 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-weight: bold;
-  margin: 20px 0;
+  margin: 40px 0;
+  @media (min-width: 700px) {
+    margin: 40px 0;
+  }
 
   .section-steps-header {
     display: flex;
     flex-direction: column;
     justify-content: center;
+
     h1 {
       font-size: 1.1rem;
       position: relative;
+      font-weight: bold;
+      @media (min-width: 700px) {
+        font-size: 1.5rem;
+        font-weight: normal;
+
+      }
     }
   }
+
   .steps {
     display: flex;
-    font-size: 0.8rem;
+    justify-content: space-around;
+    margin-top: 40px;
+    @media (min-width: 700px) {
+      background: $color-grey-white;
+      padding: 60px;
+      width: 100%;
+    }
+    .steps-mobile {
+      display: flex;
+      justify-content: space-around;
+      @media (min-width: 700px) {
+        display: none;
+      }
 
     div {
       padding: 5px;
       text-align: center;
       display: flex;
-      flex-wrap: wrap;
+      flex-direction: column;
       justify-content: center;
+      align-items: center;
+
+
+      }
+    }
+
+      .steps-icon1 {
+        background-image: url("../public/assets/assets/Icon-1.svg");
+      }
+      .steps-icon2 {
+        background-image: url("../public/assets/assets/Icon-2.svg");
+      }
+      .steps-icon3 {
+        background-image: url("../public/assets/assets/Icon-3.svg");
+      }
+      .steps-icon4 {
+        background-image: url("../public/assets/assets/Icon-4.svg");
+      }
 
       p {
         margin-top: 15px;
         position: relative;
-        &::before {
-          content: '';
-          position: absolute;
-          height: 1px;
-          top: -20%;
-          background: $color-grey;
+        font-size: 0.7rem;
+        @media (min-width: 700px) {
+          font-size: 1rem;
+
         }
       }
     }
+    .steps-desktop {
+      @media (max-width: 700px) {
+        display: none;
+      }
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0 10px;
+        p {
+        }
+      }
+      .line {
+        width: 60px;
+        height: 1px;
+        background-color: $color-grey;
+        margin: 10px 0;
+      }
+      .steps-info {
+        font-size: 0.8rem;
+
+      }
+    }
+  }
+
+.steps-icon {
+  background-image: url("../public/assets/assets/Icon-1.svg");
+  width: 50px;
+  height: 50px;
+  background-position: center;
+  background-size: cover;
+  padding-bottom: 10px;
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    height: 1px;
+    width: 100%;
+    top: 110%;
+    background: $color-grey;
+  }
+
+  @media (min-width: 700px) {
+    width: 5vw;
+    height: 5vw;
+    &::after {
+      display: none;
+    }
+  }
+  @media (min-width: 1400px) {
+    width: 4vw;
+    height: 4vw;
+    &::after {
+
+    }
   }
 }
-.steps :nth-child(1) p::before {
-  width: 50px;
-}
 
-.steps :nth-child(2) p::before {
-  width: 40px;
-}
-
-.steps :nth-child(3) p::before {
-  left: 24%;
-  width: 45px;
-
-}
-
-.steps :nth-child(4) p::before {
-    left: 28%;
-  width: 50px;
-
+.section-steps-button {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  @media (max-width: 700px) {
+display: none;
+  }
+  .button {
+    width: 250px;
+    height: 100px;
+    font-weight: normal;
+    border: 1px solid $color-grey;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    font-size: 2rem;
+    color: $color-grey;
+  }
+  :hover {
+    border: 1px solid $color-yellow;
+  }
 }

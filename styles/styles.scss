@@ -1,17 +1,23 @@
 @import "./settings/_colors.scss";
 @import "./settings/_fonts.scss";
 @import "reset";
+@import "settings/mixins.scss";
 @import "Home.module";
 @import "FoursSteps";
 @import "HomeThreeColumns";
 @import "Question";
 @import "Footer";
-@import "settings/mixins.scss";
+@import "YellowBanner";
+@import "AboutUs";
+@import "Login";
+@import "Register";
+
 
 body {
 font-family: $font-base;
   font-size: 16px;
   color: $color-grey;
+  overflow-x: hidden;
 }
 
 a {

@@ -2,35 +2,41 @@ import React, {useState} from "react";
 import Link from 'next/link';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faShirt} from '@fortawesome/free-solid-svg-icons'
+import {Link as Scroll} from "react-scroll"
 
 const HomeHeader = () => {
     const [active, setActive] = useState(false);
     const data = [
         {
             name: "Start",
-            Link: "/"
+            Link: "#"
         },
         {
             name: "O co chodzi?",
-            Link: "./Why"
+            Link: "Why"
         },
         {
             name: "O nas",
-            Link: "/team",
+            Link: "team",
         },
         {
             name: "Fundacja i organizacje",
-            Link: "/events",
+            Link: "events",
         },
         {
             name: "Kontakt",
-            Link: "/contact",
+            Link: "contact",
         },
     ];
 
+
+    const handleClick = () => {
+        setActive(prev => false)
+    }
+
     return (
         <>
-            <div className="header">
+            <div id="#" className="header">
                 <div className="header-up">
                     <div className="logo">
                         <FontAwesomeIcon icon={faShirt} className="fa-3x"/>
@@ -41,23 +47,20 @@ const HomeHeader = () => {
                         </div>
                         <div className="nav">
                             <div className="nav-login">
-                            <Link href="../Login/Login.js">
+                            <Link href="/Login">
                                 <a className="nav-login-button nav-login-button-first">Zaloguj</a>
                             </Link>
-                            <Link href="../Login/Login.js">
+                            <Link href="/Register">
                                 <a className="nav-login-button">Załóż konto</a>
                             </Link>
                             </div>
                         <ul>
                             {data.map((item, i) => (
                                 // eslint-disable-next-line react/jsx-key
-                                <Link href={item.Link}>
-                                    <li key={i}>
-                                        <a href="#" className={"a"}>
+                                <Scroll to={item.Link} smooth duraction={500} onClick={handleClick} className="scroll">                                    <li key={i}>
                                             {item.name}
-                                        </a>
-                                    </li>
-                                </Link>
+                                </li>
+                                </Scroll>
                             ))}
                         </ul>
                         </div>
@@ -66,16 +69,14 @@ const HomeHeader = () => {
                         <ul className={"ul"}>
                             {data.map((item, i) => (
                                 // eslint-disable-next-line react/jsx-key
-                                <Link href={item.Link}>
+                                <Scroll to={item.Link} smooth duraction={500} onClick={handleClick}>
                                     <li key={i}>
-                                        <a href="#" className={"a"}>
                                             {item.name}
-                                        </a>
                                     </li>
-                                </Link>
+                                </Scroll>
                             ))}
                         </ul>
-                        <Link href="../Login/Login.js">
+                        <Link href="/Login">
                         <a className="login">ZALOGUJ</a>
                         </Link>
                     </div>

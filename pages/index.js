@@ -1,9 +1,11 @@
-import HomeHeader from "./Home/HomeHeader";
-import HeaderFirst from "./Home/Header-first";
-import FoursSteps from "./Home/FoursSteps";
-import HomeThreeColumns from "./Home/HomeThreeColumns";
-import Question from "./Home/Question";
-import Footer from "./Home/Footer";
+import HomeHeader from "../Components/Home/HomeHeader";
+import HeaderFirst from "../Components/Home/Header-first";
+import FoursSteps from "../Components/Home/FoursSteps";
+import HomeThreeColumns from "../Components/Home/HomeThreeColumns";
+import Question from "../Components/Home/Question";
+import Footer from "../Components/Home/Footer";
+import YellowBanner from "../Components/Home/YellowBanner";
+import AboutUs from "../Components/Home/AboutUs";
 
 
 
@@ -13,7 +15,9 @@ export default function Home() {
         <>
             <HomeHeader/>
             <HeaderFirst/>
+            <YellowBanner/>
             <FoursSteps/>
+            <AboutUs/>
             <HomeThreeColumns/>
             <Question/>
             <Footer/>

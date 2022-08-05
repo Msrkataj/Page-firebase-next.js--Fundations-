@@ -1,27 +1,178 @@
-.footer {
+.footer-mobile {
   background: $color-yellow;
   display: flex;
   flex-direction: column;
   margin-top: 30px;
   padding: 20px;
   font-size: 0.9rem;
+  @media (min-width: 700px) {
+    display: none
+  }
+
   a {
     color: $color-grey;
   }
+
   .contact {
     font-weight: bold;
     display: flex;
     align-items: center;
+
     a {
-      margin-left: 10px ;
+      margin-left: 10px;
     }
   }
+
   .info-ul {
     display: flex;
     flex-direction: column;
+    margin-top: 20px;
+
     li {
       padding: 0;
 
+    }
+  }
+}
+
+.footer-desktop {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  margin-top: 50px;
+  @media (max-width: 700px) {
+    display: none
+
+  }
+
+  .contact-background {
+    filter: opacity(40%);
+
+    .background {
+      background-image: url("../public/assets/assets/Background-Contact-Form.jpg");
+      background-position: left;
+      background-size: cover;
+      width: 40vw;
+      height: 40vw;
+      @media (min-width: 1300px) {
+        width: 60vw;
+      }
+    }
+  }
+
+  .contact {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.3vw;
+    @media (min-width: 1000px) {
+      font-size: 1rem;
+    }
+
+    .contact-center {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+
+      .contact-center-header {
+        margin-right: 10px;
+        text-align: center;
+
+        h1 {
+          font-size: 3vw;
+          @media (min-width: 1000px) {
+            font-size: 2rem;
+          }
+        }
+      }
+
+      .contact-center-down {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+        width: 500px;
+
+        .form {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-end;
+        }
+
+        .form-up {
+          display: flex;
+          margin-bottom: 20px;
+
+          ::placeholder {
+            color: $color-light-grey;
+          }
+        }
+
+        input {
+          border: none;
+          border-bottom: 1px solid $color-grey;
+          height: 40px;
+          outline: none;
+
+        }
+
+        textarea {
+          border: none;
+          border-bottom: 1px solid $color-grey;
+          overflow: unset;
+          height: 80px;
+          font-family: $font-base;
+          outline: none;
+          resize: none;
+        }
+
+        .btn {
+          background: none;
+          padding: 13px 35px;
+          border: 1px solid $color-grey;
+          margin-top: 20px;
+          cursor: pointer;
+          margin-right: 30px;
+          font-size: 1.1rem;
+          @media (max-width: 1000px) {
+            margin-right: 80px;
+          }
+        }
+
+        .form-consent {
+          ::placeholder {
+            color: $color-light-grey;
+          }
+        }
+
+      }
+    }
+  }
+}
+
+.copyright {
+  @media (max-width: 1000px) {
+    font-size: 1.5vw;
+  }
+  .copyright-info {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 50px;
+    position: absolute;
+    top: 95%;
+    left: 45%;
+  }
+
+  .copyright-icons {
+    position: absolute;
+    top: 95%;
+    left: 85%;
+    cursor: pointer;
+    @media (max-width: 1000px) {
+      font-size: 1.5vw;
+      top: 100%;
+      left: 45%;
     }
   }
 }

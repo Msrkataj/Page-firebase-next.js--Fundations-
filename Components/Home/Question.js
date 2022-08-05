@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import HomeHeader from "../Home/HomeHeader";
+import HomeHeader from "./HomeHeader";
 import React from "react";
 
 
@@ -9,7 +9,7 @@ const Question = () => {
         <>
            <div className="question">
                <h1>Chcesz oddać swoje rzeczy lub zorganizować zbiórkę lokalną?</h1>
-               <Link href="../Login/Login.js">
+               <Link href="../../pages/Login.js">
                    <a className="login">ZAŁÓŻ KONTO</a>
                </Link>
            </div>

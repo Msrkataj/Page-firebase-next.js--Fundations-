@@ -16,16 +16,17 @@ const HomeFirst = () => {
                     <div className="header-down-login">ZAŁÓŻ KONTO</div>
                 </div>
             <div className="header-desktop">
-                <Image src="/assets/assets/Home-Hero-Image.jpg" height={500} width={500} alt=""/>
+                <div className="image"></div>
                 <div className="header-desktop-info">
-                    <h1>Zacznij pomagać! Oddaj niechciane rzeczy w zaufane ręce</h1>
+                    <h1>Zacznij pomagać! <br/><br/>Oddaj niechciane rzeczy w zaufane ręce</h1>
+                    <Image src="/assets/assets/Decoration.svg" height={60} width={200} alt=""/>
                     <div className="header-desktop-info-buttons">
 
-                        <Link href="../Login/Login.js">
-                            <a className="info-button">ODDAJ RZECZY</a>
+                        <Link href="../../pages/Login.js">
+                            <a className="info-button info-button-left">ODDAJ RZECZY</a>
                         </Link>
 
-                        <Link href="../Login/Login.js">
+                        <Link href="../../pages/Login.js">
                             <a className="info-button">ZORGANIZUJ ZBIÓRKĘ</a>
                         </Link>
 

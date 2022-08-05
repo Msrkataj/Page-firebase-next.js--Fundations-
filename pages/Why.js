@@ -1,8 +1,8 @@
 import Link from 'next/link'
-import HomeHeader from "../Home/HomeHeader";
+import HomeHeader from "../Components/Home/HomeHeader";
 
 
-const Login = () => {
+const Why = () => {
 
     return (
         <>
@@ -11,4 +11,4 @@ const Login = () => {
     )
 }
 
-export default Login
+export default Why

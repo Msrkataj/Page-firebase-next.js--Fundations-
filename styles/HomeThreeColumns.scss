@@ -3,40 +3,130 @@
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  margin-top: 10px;
   background: $color-grey-white;
-  padding-top: 10px;
-
+  padding-top: 30px;
+  @media (min-width: 700px) {
+    background: none;
+    margin-top: 30px;
+  }
 
   .who-helps-header {
     text-align: center;
-    font-weight: bold;
+    @media (min-width: 700px) {
+      font-size: 1.7rem;
+    }
   }
 
   .who-helps-buttons {
     font-size: 0.7rem;
     display: flex;
     justify-content: center;
+    cursor: pointer;
+    @media (min-width: 700px) {
+      display: none
+    }
 
     .who-helps-column {
       display: flex;
       flex-direction: column;
       align-items: center;
+
       .who-helps-button {
         width: 100px;
-        height: 90px;
+        height: 100px;
         border-radius: 50%;
-        font-weight: bold;
-        //border: 1px solid $color-grey;
         display: flex;
         justify-content: center;
         align-items: center;
         text-align: center;
         background: $color-yellow;
+        @media (min-width: 700px) {
+          border: 1px solid $color-grey;
+          background: none;
+          border-radius: 0;
+          height: 50px;
+          font-weight: normal;
+
+        }
       }
+
       p {
         margin: 10px 15px;
       }
+    }
+  }
+}
+
+
+.who-helps-desktop {
+  @media (max-width: 700px) {
+    display: none
+  }
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+
+  .who-helps-buttons-desktop {
+    display: flex;
+    justify-content: center;
+    .who-helps-column {
+      margin: 20px 30px;
+
+      .who-helps-button {
+        padding: 15px;
+        text-align: center;
+        cursor: pointer;
+
+      }
+      :hover {
+        border: 1px solid $color-grey;
+      }
+    }
+  }
+
+  .who-helps-info {
+    text-align: center;
+    margin: 30px 350px;
+    @media (max-width: 1000px) {
+      margin: 30px 200px;
+    }
+  }
+
+  .who-helps-rows {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .who-helps-row {
+      width: 80vw;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 34px 0;
+      border-bottom: 1px solid $color-grey;
+      .who-helps-row-header {
+        margin-right: 100px;
+        h2 {
+          font-size: 1.3rem;
+          margin-bottom: 2px;
+        }
+      }
+      p {
+        font-size: 0.9rem;
+      }
+    }
+  }
+  .who-helps-desktop-pages {
+    display: flex;
+    justify-content: space-around;
+    width: 140px;
+    margin-top: 30px;
+    cursor: pointer;
+    .page {
+      padding: 10px;
+    }
+    :hover {
+      border: 1px solid $color-grey;
     }
   }
 }
