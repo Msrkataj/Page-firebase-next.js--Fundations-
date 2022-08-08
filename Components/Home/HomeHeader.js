@@ -1,11 +1,18 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import Link from 'next/link';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faShirt} from '@fortawesome/free-solid-svg-icons'
 import {Link as Scroll} from "react-scroll"
+import {
+    onAuthStateChanged,
+    signOut
+} from "firebase/auth";
+import { auth } from "/firebase";
 
 const HomeHeader = () => {
     const [active, setActive] = useState(false);
+    const [user, setUser] = useState({});
+
     const data = [
         {
             name: "Start",
@@ -30,6 +37,16 @@ const HomeHeader = () => {
     ];
 
 
+    useEffect(() => {
+        onAuthStateChanged(auth, (currentUser) => {
+            setUser(currentUser);
+        });
+    }, [])
+
+    const logout = async () => {
+        await signOut(auth);
+    };
+
     const handleClick = () => {
         setActive(prev => false)
     }
@@ -45,14 +62,19 @@ const HomeHeader = () => {
                         <div onClick={() => setActive(!active)}>
                             <div className={active ? "activeHamburger" : "hamburber"}/>
                         </div>
+                        <h4 style={{display: !user ? "none" : null}}> Witaj: </h4>
+                        {user?.email}
                         <div className="nav">
                             <div className="nav-login">
                             <Link href="/Login">
-                                <a className="nav-login-button nav-login-button-first">Zaloguj</a>
+                                <a style={{display: user ? "none" : null}} className="nav-login-button nav-login-button-first">Zaloguj</a>
                             </Link>
                             <Link href="/Register">
-                                <a className="nav-login-button">Załóż konto</a>
+                                <a style={{display: user ? "none" : null}} className="nav-login-button">Załóż konto</a>
                             </Link>
+                                <Link href="#">
+                                    <a className="nav-login-button" onClick={logout}>Wyloguj</a>
+                                </Link>
                             </div>
                         <ul>
                             {data.map((item, i) => (
