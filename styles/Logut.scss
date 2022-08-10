@@ -1,0 +1,13 @@
+.login-content-logut {
+
+  .btn {
+    border: 1px solid $color-grey;
+    padding: 15px 20px;
+    font-size: 1.1rem;
+    color: $color-grey;
+    text-decoration: none;
+  }
+  :hover {
+    border: 1px solid $color-yellow;
+  }
+}

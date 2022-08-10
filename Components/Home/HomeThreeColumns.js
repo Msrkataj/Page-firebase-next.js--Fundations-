@@ -114,83 +114,34 @@ const HomeThreeColumns = () => {
     const [active, setActive] = useState("foundation");
     const [description, setDescription] = useState("")
     const [des, setDes] = useState("")
-    const [foundation, setFoundation] = useState("");
+    const [foundation, setFoundation] = useState([]);
     const [organization, setOrganization] = useState([]);
     const [orders, setOrders] = useState("")
     const [info, setInfo] = useState(foundation)
     const [infos, setInfos] = useState(info)
-    const [pages, setPages] = useState([1,2,3])
-
-    // const usersCollectionRef = collection(db, "foundationn");
+    const [curentPage, setCurrentPage] = useState(0)
 
 
     useEffect(() => {
-
-        onSnapshot(collection(db, "organization"), (snapshot) =>
-            setDescription(snapshot.docs.map((doc) => ({...doc.data(), id: doc.id}))));
-
         const get = async () => {
-
-            const result = []
             const resultF = []
-            const resultO = []
-            const resultOr = []
 
-            const docRefFou = collection(db, "foundation");
-            const docRefOrg = collection(db, "organization");
-            const docRefOrd = collection(db, "orders");
-            const docRefInfo = collection(db, "info");
-
-
-
+            const docRefFou = collection(db, active);
             const docSnapFou = await getDocs(docRefFou);
-            const docSnapOrg = await getDocs(docRefOrg);
-            const docSnapOrd = await getDocs(docRefOrd);
-            const docSnapInfo = await getDocs(docRefInfo);
-
-
-
             docSnapFou.forEach(element => resultF.push(element.data()))
-            docSnapOrg.forEach(element => resultO.push(element.data()))
-            docSnapOrd.forEach(element => resultOr.push(element.data()))
-            docSnapInfo.forEach(element => setInfo(element.data()))
-            // docSnapFou.forEach(element => setFoundation(prev => element.data()))
 
-
-
-            setFoundation(prev => resultF)
-            setOrganization(prev => resultO)
-            setOrders(prev => resultOr)
-            // setInfo(prev => foundation)
-            // setActive(prev => foundation)
-
-        }
+            setFoundation(resultF)
+       }
         get()
-    }, [])
+    }, [active])
 
+    const getElements = () => {
+        const offset = curentPage * 3;
+        const limit = offset +3 ;
 
-//     useEffect(
-//         () => {
-//         onSnapshot(collection(db, "organization"), (snapshot) =>
-//             setDescription(snapshot.docs.map((doc) => ({...doc.data(), id: doc.id}))))
-// }, [])
-
-    const firstPage = () => {
-        setPages([0,1,2])
+        return foundation.slice(offset, limit)
     }
 
-    const secondPage= () => {
-        setPages([3,4,5])
-    }
-
-    const thirdPage = () => {
-        setPages([6,7,8])
-    }
-    // foundation.forEach(element => setPages(active[element]))
-
-   // const sum = pages.forEach(element => (console.log(element)))
-
-    console.log(infos)
 
     return (
         <>
@@ -219,15 +170,15 @@ const HomeThreeColumns = () => {
                 <div className="who-helps-desktop">
                     <div className="who-helps-buttons-desktop">
                         <div className="who-helps-column foundation">
-                            <div onClick={() => setInfos(info.foundation) & setActive(foundation) & firstPage()} className="who-helps-button">Fundacjom</div>
+                            <div onClick={() => setActive("foundation") } className="who-helps-button">Fundacjom</div>
                         </div>
                         <div className="who-helps-column organization">
-                            <div onClick={() => setInfos(info.organization) & setActive(organization) & firstPage()} className="who-helps-button">Organizacjom
+                            <div onClick={() => setActive("organization") } className="who-helps-button">Organizacjom
                                 pozarządowym
                             </div>
                         </div>
                         <div className="who-helps-column collection">
-                            <div onClick={() => setInfos(info.orders) & setActive(orders) & firstPage()} className="who-helps-button">Lokalnym zbiórkom
+                            <div onClick={() => setActive("orders")} className="who-helps-button">Lokalnym zbiórkom
                             </div>
                         </div>
                     </div>
@@ -235,32 +186,26 @@ const HomeThreeColumns = () => {
                         <p>{infos}</p>
                     </div>
                     <div className="who-helps-rows">
-                        <div className="who-helps-row who-helps-row-first">
-                            <div className="who-helps-row-header">
-                                <h2>{active[pages[0]].title}</h2>
-                                <p>{active[pages[0]].objective}</p>
+                        {getElements().map((el, i) => (
+                            <div className="who-helps-rows">
+                                <div className="who-helps-row who-helps-row-first">
+                                    <div className="who-helps-row-header">
+                                        <h2>{el.title}</h2>
+                                        <p>{el.objective}</p>
+                                    </div>
+                                    <p>{el.stuff}</p>
+                                </div>
                             </div>
-                            <p>{active[pages[0]].stuff}</p>
-                        </div>
-                        <div className="who-helps-row who-helps-row-second">
-                            <div className="who-helps-row-header">
-                                <h2>{active[pages[1]].title}</h2>
-                                <p>{active[pages[1]].objective}</p>
-                            </div>
-                            <p>{active[pages[1]].stuff}</p>
-                        </div>
-                        <div className="who-helps-row who-helps-row-third">
-                            <div className="who-helps-row-header">
-                                <h2>{active[pages[2]].title}</h2>
-                                <p>{active[pages[2]].objective}</p>
-                            </div>
-                            <p>{active[pages[2]].stuff}</p>
-                        </div>
+                        ))}
                     </div>
                     <div className="who-helps-desktop-pages">
-                        <div onClick={firstPage} className="page">1</div>
-                        <div style={{display: active.length-1 < 4 ? "none" : null}} onClick={secondPage} className="page">2</div>
-                        <div style={{display: active.length-1 < 7 ? "none" : null}} onClick={thirdPage} className="page">3</div>
+                        {
+                            new Array(Math.ceil(foundation.length / 3))
+                                .fill(null)
+                                .map((_, i) => (
+                                    <div onClick={() => setCurrentPage(i)} className="page">{i +1}</div>
+                                ))
+                        }
                     </div>
                 </div>
             </div>

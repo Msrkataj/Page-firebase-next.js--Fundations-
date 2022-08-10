@@ -62,18 +62,19 @@ const HomeHeader = () => {
                         <div onClick={() => setActive(!active)}>
                             <div className={active ? "activeHamburger" : "hamburber"}/>
                         </div>
-                        <h4 style={{display: !user ? "none" : null}}> Witaj: </h4>
-                        {user?.email}
+                        <h4 style={{display: !user ? "none" : null}}> Witaj: <p>{user?.email}</p> </h4>
+
                         <div className="nav">
                             <div className="nav-login">
+
                             <Link href="/Login">
                                 <a style={{display: user ? "none" : null}} className="nav-login-button nav-login-button-first">Zaloguj</a>
                             </Link>
                             <Link href="/Register">
                                 <a style={{display: user ? "none" : null}} className="nav-login-button">Załóż konto</a>
                             </Link>
-                                <Link href="#">
-                                    <a className="nav-login-button" onClick={logout}>Wyloguj</a>
+                                <Link href="/Logut">
+                                    <a style={{display: !user ? "none" : null}} className="nav-login-button" onClick={logout}>Wyloguj</a>
                                 </Link>
                             </div>
                         <ul>

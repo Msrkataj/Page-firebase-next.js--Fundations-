@@ -1,8 +1,18 @@
 import Link from 'next/link'
 import Image from "next/image";
-import React from "react";
+import React, {useEffect, useState} from "react";
+import {onAuthStateChanged} from "firebase/auth";
+import {auth} from "../../firebase";
+
 
 const HomeFirst = () => {
+    const [user, setUser] = useState({});
+
+    useEffect(() => {
+        onAuthStateChanged(auth, (currentUser) => {
+            setUser(currentUser);
+        });
+    }, [])
 
     return (
         <>
@@ -22,11 +32,11 @@ const HomeFirst = () => {
                     <Image src="/assets/assets/Decoration.svg" height={60} width={200} alt=""/>
                     <div className="header-desktop-info-buttons">
 
-                        <Link href="../../pages/Login.js">
+                        <Link href={user ? "Step" : "Login"}>
                             <a className="info-button info-button-left">ODDAJ RZECZY</a>
                         </Link>
 
-                        <Link href="../../pages/Login.js">
+                        <Link href={user ? "Step" : "Login"}>
                             <a className="info-button">ZORGANIZUJ ZBIÓRKĘ</a>
                         </Link>
 

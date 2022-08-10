@@ -207,7 +207,12 @@
   }
 
 }
-
+h4 {
+  font-weight: bold;
+  p {
+    font-weight: normal;
+  }
+}
 .nav {
   @media (max-width: 700px) {
     display: none;
@@ -230,6 +235,7 @@
 
   .nav-login {
     margin: 0 10px 20px 0;
+
     :hover {
       border: 1px solid $color-yellow;
       border-radius: 5%;

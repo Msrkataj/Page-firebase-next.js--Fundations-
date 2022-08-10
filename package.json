@@ -13,12 +13,17 @@
     "@fortawesome/free-solid-svg-icons": "^6.1.2",
     "@fortawesome/react-fontawesome": "^0.2.0",
     "babel-plugin-macros": "^3.1.0",
+    "email-validator": "^2.0.4",
     "firebase": "^9.9.1",
+    "formik": "^2.2.9",
     "next": "12.2.3",
+    "password-validator": "^5.3.0",
     "react": "18.2.0",
     "react-burger-menu": "^3.0.8",
     "react-dom": "18.2.0",
-    "react-scroll": "^1.8.7"
+    "react-password-checklist": "^1.4.0",
+    "react-scroll": "^1.8.7",
+    "yup": "^0.32.11"
   },
   "devDependencies": {
     "eslint": "8.20.0",
