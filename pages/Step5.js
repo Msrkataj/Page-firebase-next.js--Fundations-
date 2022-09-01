@@ -1,12 +1,50 @@
 import Link from 'next/link'
-
 import HeaderStep from "../Components/Home/HeaderStep";
 import Footer from "../Components/Home/Footer";
-import React from "react";
-import Image from "next/image";
+import React, {useEffect, useState} from "react";
 
+const Step5 = (Step1) => {
 
-const Step5 = () => {
+    const [Steps, setSteps] = useState([]);
+    const [State, setState] = useState(false);
+    const [back, setBack] = useState(() => {});
+    const [bags, setBags] = useState(() => {});
+    const info = bags
+
+    const Where = localStorage.getItem("Where")
+    const initialWhere = JSON.parse(Where);
+    const whoHelp = localStorage.getItem("whoHelp")
+    const initialWhoHelp = JSON.parse(whoHelp);
+    const address = localStorage.getItem("address")
+    const Address = JSON.parse(address);
+
+    useEffect(() => {
+        const saved = localStorage.getItem("back")
+        const initialValue = JSON.parse(saved);
+        setBack(prev => (
+            initialValue || ""
+        ))
+            , [setBack]
+    })
+
+    useEffect(() => {
+        const saved = localStorage.getItem("bags");
+        const initialValue = JSON.parse(saved);
+        setBags(prev => (
+            initialValue || ""
+        ))
+            , [setBags]
+    })
+
+    useEffect(() => {
+        setSteps(prev => (
+            Step1
+        ))
+            back === "ubrania, które nadają się do ponownego użycia" ? setState("ubrania w dobrym stanie") : false ||
+                back === "ubrania, do wyrzucenia" ? setState("ubrania w złym stanie") : false
+            , [setSteps]
+    })
+
 
     return (
         <>
@@ -21,11 +59,11 @@ const Step5 = () => {
                                 <div className="back-info">
                                     <div>
                                         <div className="steps-icon steps-icon1"/>
-                                        <p>4 worki, ubrania w dobrym stanie, dzieciom</p>
+                                        <p>{bags} {info < 2 ? "worek" : "worki"}, {!State ? back : State}, {initialWhoHelp}</p>
                                     </div>
                                     <div>
                                         <div className="steps-icon steps-icon4"/>
-                                        <p>dla lokalizacji: Warszawa</p>
+                                        <p>dla lokalizacji: {initialWhere}</p>
                                     </div>
                                 </div>
                             </div>
@@ -36,19 +74,19 @@ const Step5 = () => {
                                     </div>
                                     <div className="summary-value">
                                         <form>
-                                            <p>Ulica</p>
-                                           <p></p>
-                                        </form>
-                                        <form>
-                                            <p>Miasto</p>
+                                            <p>Ulica: {Address.street}</p>
                                             <p></p>
                                         </form>
                                         <form>
-                                            <p>Kod pocztowy</p>
+                                            <p>Miasto: {Address.city}</p>
                                             <p></p>
                                         </form>
                                         <form>
-                                            <p>Numer telefonu</p>
+                                            <p>Kod pocztowy: {Address.postalCode}</p>
+                                            <p></p>
+                                        </form>
+                                        <form>
+                                            <p>Numer telefonu: {Address.telephone}</p>
                                             <p></p>
                                         </form>
                                     </div>

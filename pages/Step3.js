@@ -2,10 +2,47 @@ import Link from 'next/link'
 
 import HeaderStep from "../Components/Home/HeaderStep";
 import Footer from "../Components/Home/Footer";
-import React from "react";
+import React, {useEffect, useState} from "react";
+import Step5 from "./Step5";
 
 
 const Step3 = () => {
+
+    const [NameOrganization, SetNameOrganization] = useState(() => {
+        // getting stored value
+        if (typeof window !== 'undefined') {
+            const saved = localStorage.getItem("NameOrganization");
+            const initialValue = JSON.parse(saved);
+            return initialValue || "";
+        }
+    });
+
+    const [Where, SetWhere] = useState(() => {
+        // getting stored value
+        if (typeof window !== 'undefined') {
+            const saved = localStorage.getItem("Where");
+            const initialValue = JSON.parse(saved);
+            return initialValue || "";
+        }
+    });
+
+    const [whoHelp, SetWhoHelp] = useState(() => {
+        // getting stored value
+        if (typeof window !== 'undefined') {
+            const saved = localStorage.getItem("whoHelp");
+            const initialValue = JSON.parse(saved);
+            return initialValue || "";
+        }
+    });
+
+    useEffect(() => {
+        // storing input name
+        localStorage.setItem("whoHelp", JSON.stringify(whoHelp));
+        localStorage.setItem("Where", JSON.stringify(Where));
+        localStorage.setItem("NameOrganization", JSON.stringify(NameOrganization));
+
+    }, [whoHelp, Where, NameOrganization]);
+
 
     return (
         <>
@@ -21,7 +58,7 @@ const Step3 = () => {
                             <p>Krok 3/4</p>
                             <h2>Lokalizacja: </h2>
                             <form className="bags">
-                                <select name="bags" >
+                                <select name="bags" value={Where} onChange={e => SetWhere(e.target.value)}>
                                     <option value="hide">--wybierz--</option>
                                     <option value="Poznań">Poznań</option>
                                     <option value="Warszawa">Warszawa</option>
@@ -33,23 +70,23 @@ const Step3 = () => {
                             <div className="step-who-help">
                                 <h3>Komu chcesz pomóc? </h3>
                                 <form>
-                                        <div className="toggle">
-                                            <input type="radio" name="sizeBy" value="weight" id="sizeWeight" />
+                                        <div className="toggle" value={whoHelp} onChange={e => SetWhoHelp(e.target.value)}>
+                                            <input type="radio" name="sizeBy" value="dzieciom" id="sizeWeight" />
                                             <label htmlFor="sizeWeight">dzieciom</label>
-                                            <input type="radio" name="sizeBy" value="dimensions" id="sizeDimensions"/>
+                                            <input type="radio" name="sizeBy" value="samotnym matkom" id="sizeDimensions"/>
                                             <label htmlFor="sizeDimensions">samotnym matkom</label>
-                                            <input type="radio" name="sizeBy" value="dimensions2" id="size"/>
+                                            <input type="radio" name="sizeBy" value="bezdomnym" id="size"/>
                                             <label htmlFor="size">bezdomnym</label>
-                                            <input type="radio" name="sizeBy" value="dimensions3" id="sizeD"/>
+                                            <input type="radio" name="sizeBy" value="niepełnosprawnym" id="sizeD"/>
                                             <label htmlFor="sizeD">niepełnosprawnym</label>
-                                            <input type="radio" name="sizeBy" value="dimensions4" id="sizeDi"/>
+                                            <input type="radio" name="sizeBy" value="osobom starszym" id="sizeDi"/>
                                             <label htmlFor="sizeDi">osobom starszym</label>
                                         </div>
                                 </form>
                             </div>
-                            <div className="step-text">
+                            <div className="step-text" >
                                 <h3>Wpisz nazwę konkretnej organizacji (opcjonalnie) </h3>
-                                <textarea id="message"></textarea>
+                                <textarea id="message" value={NameOrganization} onChange={e => SetNameOrganization(e.target.value)}></textarea>
                             </div>
                             <div className="button">
                                 <Link class href="/Step2">

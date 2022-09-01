@@ -5,26 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="85e8d66e-2b3a-4cf7-a094-4b7754db81bf" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Components/Home/HeaderStep.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Components/Home/ValidatedLoginForm.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/Logut.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/Step.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/Step2.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/Step3.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/Step4.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/Step5.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/StepGoodbye.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/styles/Logut.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/styles/Step.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Components/Home/Header-first.js" beforeDir="false" afterPath="$PROJECT_DIR$/Components/Home/Header-first.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Components/Home/HomeHeader.js" beforeDir="false" afterPath="$PROJECT_DIR$/Components/Home/HomeHeader.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Components/Home/HomeThreeColumns.js" beforeDir="false" afterPath="$PROJECT_DIR$/Components/Home/HomeThreeColumns.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/Login.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/Register.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/Register.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/Home.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/styles/Home.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/styles/styles.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/Step.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/Step.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/Step2.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/Step2.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/Step3.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/Step3.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/Step4.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/Step4.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/Step5.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/Step5.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/_app.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/Login.scss" beforeDir="false" afterPath="$PROJECT_DIR$/styles/Login.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,7 +66,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/msrkataj/LOTR-games-cards&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/msrkataj/portfolio&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;SCSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -114,7 +107,14 @@
       <workItem from="1659960919717" duration="10491000" />
       <workItem from="1660062549897" duration="14830000" />
       <workItem from="1660126047910" duration="15628000" />
-      <workItem from="1660154444868" duration="951000" />
+      <workItem from="1660154444868" duration="1603000" />
+      <workItem from="1660832622223" duration="7434000" />
+      <workItem from="1660911700739" duration="21031000" />
+      <workItem from="1661258791632" duration="9545000" />
+      <workItem from="1661430503118" duration="1818000" />
+      <workItem from="1661858828599" duration="3876000" />
+      <workItem from="1661951051069" duration="3347000" />
+      <workItem from="1662050088166" duration="14013000" />
     </task>
     <servers />
   </component>

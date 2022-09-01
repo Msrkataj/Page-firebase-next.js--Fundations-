@@ -2,10 +2,62 @@ import Link from 'next/link'
 
 import HeaderStep from "../Components/Home/HeaderStep";
 import Footer from "../Components/Home/Footer";
-import React from "react";
+import React, {useEffect, useState} from "react";
 
 
 const Step4 = () => {
+
+    const [Address, setAddress] = useState( {
+        street: "",
+        city: "",
+        postalCode: "",
+        telephone: ""
+    });
+
+    const handleChange = ({ target }) => {
+        setAddress(prev => ({
+            ...prev,
+            street: target.value,
+        }))
+    }
+
+    const handleChange2 = ({ target }) => {
+        setAddress(prev => ({
+            ...prev,
+            city: target.value,
+        }))
+    }
+
+    const handleChange3 = ({ target }) => {
+        setAddress(prev => ({
+            ...prev,
+            postalCode: target.value,
+        }))
+    }
+
+    const handleChange4 = ({ target }) => {
+        setAddress(prev => ({
+            ...prev,
+            telephone: target.value,
+        }))
+    }
+
+
+
+    // useEffect(() => {
+    //     const saved = localStorage.getItem("address")
+    //     const initialValue = JSON.parse(saved);
+    //     setAddress(prev => ([
+    //         ...prev,
+    //         street: initialValue
+    //     ]))
+    //         , [setAddress]
+    // })
+
+    useEffect(() => {
+        // storing input name
+        localStorage.setItem("address", JSON.stringify(Address));
+    }, [Address]);
 
     return (
         <>
@@ -19,28 +71,28 @@ const Step4 = () => {
                     <div className="step-content-center">
                         <div className="steps">
                             <p>Krok 4/4</p>
-                            <h2>Podaj adres oraz termin odbioru rzecz przez kuriera</h2>
+                            <h2>Podaj adres oraz termin odbioru rzeczy przez kuriera</h2>
                             <form className="summary">
                                 <div className="summary-address summary-center">
                                     <div className="summary-title">
                                         <h3>Adres odbioru:</h3>
                                     </div>
                                     <div className="summary-value">
-                                        <form>
+                                        <form >
                                             <label>Ulica</label>
-                                            <input type="text" id="text" />
+                                            <input type="text" value={Address.street} onChange={handleChange}/>
                                         </form>
                                         <form>
                                             <label>Miasto</label>
-                                            <input type="text" id="text" />
+                                            <input type="text" value={Address.city} onChange={handleChange2}/>
                                         </form>
                                         <form>
                                             <label>Kod pocztowy</label>
-                                            <input type="text" id="text" />
+                                            <input type="text" value={Address.postalCode} onChange={handleChange3}/>
                                         </form>
                                         <form>
                                             <label>Numer telefonu</label>
-                                            <input type="text" id="text" />
+                                            <input type="text" value={Address.telephone} onChange={handleChange4}/>
                                         </form>
                                     </div>
                                 </div>

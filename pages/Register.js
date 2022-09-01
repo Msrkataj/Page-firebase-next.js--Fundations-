@@ -14,7 +14,9 @@ import * as Yup from "yup";
 const Register = () => {
     const [registerEmail, setRegisterEmail] = useState("");
     const [registerPassword, setRegisterPassword] = useState("");
-    const [message, setMessage] = useState('');
+    const [message, setMessage] = useState("");
+    const [messageError, setMessageError] = useState("");
+    const [messageError2, setMessageError2] = useState("");
     const [error, setError] = useState(null);
     const [cPassword, setCPassword] = useState('');
     const [showErrorMessage, setShowErrorMessage] = useState(false);
@@ -47,8 +49,10 @@ const Register = () => {
 
     useEffect(() => {
             registerPassword.length >= 8 ? setShowErrorMessage2(false) : setShowErrorMessage2(true)
+           cPassword !== "" ? showErrorMessage || cPassword === "" ? test2() : test() : test()
+            registerPassword !== "" ? showErrorMessage2 ? Error2message() : Error2empty() : Error2empty()
         }
-    , [registerPassword])
+    , [registerPassword, showErrorMessage, showErrorMessage2])
 
 
     const handleChange = (event) => {
@@ -76,14 +80,30 @@ const Register = () => {
         handleChange()
     };
 
+    const test3 = () => {
+        cPassword === "" ? test2() : null || registerPassword === "" ? Error2message() : null
+    }
+
+
+    const test = () => {
+        setMessageError("")
+   }
+
+    const Error2empty = () => {
+        setMessageError2("")
+    }
+    const Error2message = () => {
+        setMessageError2("Hasło ma za mało znaków")
+    }
+
+        const test2 = () => {
+        setMessageError(prev => "Hasła nie są takie same")
+    }
+
     function testFunction(event) {
         setRegisterEmail(event.target.value),
             handleChange(event.target.value);
     }
-
-    // function testFunction2(event) {
-    //     setRegisterPassword(event.target.value)
-    // }
 
 
     return (
@@ -106,8 +126,8 @@ const Register = () => {
                         </div>
                         <div className="password">
                             <form>
-                                {showErrorMessage && isCPasswordDirty ? <div style={{color: 'red'}}> Hasła nie są takie same </div> : ''}
-                                {showErrorMessage2 ? <div style={{color: 'red'}}> Hasło ma za mało znaków </div> : ''}
+                                <div style={{color: 'red'}}> {messageError} </div>
+                                <div style={{color: 'red'}}> {messageError2} </div>
                                 <div className="mb-3">
                                     <label htmlFor="password" className="form-label">Hasło</label>
                                     <input type="password" className="form-control" id="password" value={registerPassword}
@@ -125,8 +145,8 @@ const Register = () => {
 
                     </div>
                     <div className="register-buttons">
-                        <Link href={"/Login"}>
-                            <a className="btn"  onClick={register}>Załóź konto</a>
+                        <Link disabled={disabledOn} href={showErrorMessage === false && error === null && registerEmail !== "" && showErrorMessage2 === false ? "/" : ""}>
+                            <a className="btn" onClick={showErrorMessage === false  && error === null && showErrorMessage2 === false ? register : test3}>Załóź konto</a>
                         </Link>
                         <Link href="/Login">
                             <a type="submit" className="btn">Zaloguj się</a>

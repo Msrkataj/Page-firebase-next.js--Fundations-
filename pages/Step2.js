@@ -2,10 +2,29 @@ import Link from 'next/link'
 
 import HeaderStep from "../Components/Home/HeaderStep";
 import Footer from "../Components/Home/Footer";
-import React from "react";
-
+import React, {useEffect, useState} from "react";
+import Step from "./Step";
+import Step5 from "./Step5";
 
 const Step2 = () => {
+
+    const [bags, setBags] = useState(() => {
+        // getting stored value
+        if (typeof window !== 'undefined') {
+            const saved = localStorage.getItem("bags");
+            const initialValue = JSON.parse(saved);
+            return initialValue || "";
+        }
+    });
+
+    useEffect(() => {
+        // storing input name
+        localStorage.setItem("bags", JSON.stringify(bags));
+
+    }, [bags]);
+
+    Step5(bags)
+
 
     return (
         <>
@@ -22,7 +41,7 @@ const Step2 = () => {
                             <h2>Podaj liczbę 60l worków, w które spakowałeś/aś rzeczy:</h2>
                             <form className="bags">
                                 <label>Liczba 60l worków:</label>
-                                <select name="bags" >
+                                <select name="bags" value={bags} onChange={e => setBags(e.target.value)}>
                                     <option value="hide">--wybierz--</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>

@@ -79,8 +79,7 @@ const HomeHeader = () => {
                             </div>
                         <ul>
                             {data.map((item, i) => (
-                                // eslint-disable-next-line react/jsx-key
-                                <Scroll to={item.Link} smooth duraction={500} onClick={handleClick} className="scroll">                                    <li key={i}>
+                                <Scroll to={item.Link} key={i} smooth duraction={500} onClick={handleClick} className="scroll">                                    <li key={i}>
                                             {item.name}
                                 </li>
                                 </Scroll>
@@ -91,8 +90,7 @@ const HomeHeader = () => {
                     <div className={active ? "activeSidenav " : "sidenav "}>
                         <ul className={"ul"}>
                             {data.map((item, i) => (
-                                // eslint-disable-next-line react/jsx-key
-                                <Scroll to={item.Link} smooth duraction={500} onClick={handleClick}>
+-                                <Scroll to={item.Link} smooth duraction={500} onClick={handleClick}>
                                     <li key={i}>
                                             {item.name}
                                     </li>

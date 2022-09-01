@@ -187,6 +187,7 @@ const HomeThreeColumns = () => {
                     </div>
                     <div className="who-helps-rows">
                         {getElements().map((el, i) => (
+                            // eslint-disable-next-line react/jsx-key
                             <div className="who-helps-rows">
                                 <div className="who-helps-row who-helps-row-first">
                                     <div className="who-helps-row-header">
@@ -203,6 +204,7 @@ const HomeThreeColumns = () => {
                             new Array(Math.ceil(foundation.length / 3))
                                 .fill(null)
                                 .map((_, i) => (
+                                    // eslint-disable-next-line react/jsx-key
                                     <div onClick={() => setCurrentPage(i)} className="page">{i +1}</div>
                                 ))
                         }
