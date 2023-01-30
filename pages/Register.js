@@ -109,7 +109,7 @@ const Register = () => {
     return (
 
         <>
-            <HomeHeader/>
+            <HomeHeader close={true}/>
                 <div className="register-menu">
                     <div className="register-header">
                         <h1>Załóż konto</h1>

@@ -1,8 +1,19 @@
 import Link from 'next/link'
 import HomeHeader from "./HomeHeader";
 import Image from 'next/image';
+import {useEffect, useState} from "react";
+import {onAuthStateChanged} from "firebase/auth";
+import {auth} from "../../firebase";
 
 const FoursSteps = () => {
+
+    const [user, setUser] = useState({});
+
+    useEffect(() => {
+        onAuthStateChanged(auth, (currentUser) => {
+            setUser(currentUser);
+        });
+    }, [])
 
     return (
         <>
@@ -58,7 +69,7 @@ const FoursSteps = () => {
                     </steps>
                 </div>
                 <div className="section-steps-button">
-                    <Link href="../../pages/Login.js">
+                    <Link href={user ? "Step" : "Login"}>
                         <a className="button">ODDAJ RZECZY</a>
                     </Link>
                 </div>

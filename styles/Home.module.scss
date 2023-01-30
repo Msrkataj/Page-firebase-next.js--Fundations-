@@ -24,8 +24,8 @@
 
   .menu {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
 
     ul {
       display: flex;
@@ -63,23 +63,80 @@
   .header-down-info-second {
     font-size: 1.2rem;
   }
+}
+.header-down-login {
+  background: $color-yellow;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  height: 50px;
+  border-radius: 10px;
+}
 
-  .header-down-login {
-    background: $color-yellow;
+.header-login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: $color-grey-white;
+  @media (min-width: 700px) {
+    display: none;
+  }
+
+  .header-login-title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin: 20px 0;
+  }
+
+  .header-login-center {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 150px;
-    height: 50px;
-    border-radius: 10px;
+    margin-bottom: 30px;
+
+    .header-info {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      justify-content: center;
+      margin: 0 20px;
+      .circle {
+        width: 20vw;
+        height: 20vw;
+        border: 3px solid $color-yellow;
+        border-radius: 50%;
+        font-weight: bold;
+        font-size: 3vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .circle-center {
+        }
+      }
+      .circle-info {
+        text-align: center;
+      }
+    }
   }
 }
 
+.header-login-buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 80vw;
+  margin: 20px;
+  .header-login-button {
+    text-align: center;
+    color: $color-grey;
+    font-weight: bold;
+  }
+}
 
 .header-desktop {
   @media (max-width: 700px) {
     display: none;
   }
+
   .image {
     background-image: url("../public/assets/assets/Home-Hero-Image.jpg");
     position: center;
@@ -87,19 +144,24 @@
     width: 60vw;
     height: 40vw;
   }
+
   display: flex;
+
   .header-desktop-info {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
+
     h1 {
       font-size: 2.2vw;
 
     }
+
     .header-desktop-info-buttons {
       margin-top: 7vw;
+
       .info-button {
         border: 1px solid $color-grey;
         color: $color-grey;
@@ -107,14 +169,22 @@
         padding: 1.5vw;
         font-size: 1.6vw;
       }
+
       .info-button-left {
         margin-right: 2vw;
       }
+
       :hover {
         border: 2px solid $color-yellow;
       }
     }
   }
+}
+
+.home-mobile {
+  position: absolute;
+  left: 20px;
+  top: 20px;
 }
 
 .hamburber {
@@ -207,12 +277,15 @@
   }
 
 }
+
 h4 {
   font-weight: bold;
+
   p {
     font-weight: normal;
   }
 }
+
 .nav {
   @media (max-width: 700px) {
     display: none;
@@ -220,14 +293,17 @@ h4 {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+
   ul {
     :hover {
       border-bottom: 1px solid $color-yellow;
     }
+
     li {
       cursor: pointer;
     }
   }
+
   a {
     color: $color-grey;
     font-weight: normal;
@@ -248,10 +324,11 @@ h4 {
       padding: 10px;
 
     }
+
     .nav-login-button-first {
       margin-right: 10px;
     }
-}
+  }
 }
 
 
@@ -285,12 +362,12 @@ ul {
       padding: 0;
     }
   }
+
 }
 
 
-
 .login {
-  margin: 50px 30px;
+  margin: 100px 35px;
   background: $color-brown;
   display: flex;
   justify-content: center;

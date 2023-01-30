@@ -3,6 +3,9 @@
   justify-content: flex-end;
   align-items: center;
   margin-right: 50px;
+  @media (max-width: 800px) {
+    display: none;
+  }
 
   .header-step-image {
     background-image: url("../public/assets/assets/Form-Hero-Image.jpg");
@@ -65,14 +68,76 @@
   }
 }
 
+.header-step-mobile {
+  background: $color-grey-white;
+  text-align: center;
+  @include mobile-min {
+    display: none;
+  }
+
+  .header-step-mobile-title {
+    font-size: 4vw;
+    padding: 30px;
+    font-weight: bold;
+
+    h1 {
+      margin-bottom: 30px;
+    }
+  }
+}
+
+.steps-mobile {
+  display: flex;
+  justify-content: space-around;
+  margin: 30px;
+
+  .step-mobile {
+    width: 8vw;
+    height: 8vw;
+    display: flex;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 4vw;
+    border: none;
+    box-shadow: 5.3px 6.7px 7px rgba(0, 0, 0, 0.02),
+    17.9px 22.3px 23.5px rgba(0, 0, 0, 0.085),
+    80px 100px 105px rgba(0, 0, 0, 0.07);
+    @include mobile-min {
+      display: none;
+    }
+
+    a {
+      text-decoration: none;
+      color: $color-light-grey;
+    }
+  }
+
+  .step-mobileControl {
+    background: $color-yellow;
+    border: 1px solid black;
+
+    a {
+      color: $color-grey;
+    }
+  }
+}
 
 .step-content {
   height: 800px;
   margin-top: 50px;
   background: $color-grey-white;
+  @include mobile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+  }
 
   .step-content-alert {
     background: $color-yellow;
+    width: 100%;
     height: 100px;
     display: flex;
     flex-direction: column;
@@ -90,11 +155,25 @@
     display: flex;
     justify-content: center;
     margin-top: 80px;
+    @include mobile {
+      margin-top: 20px;
+    }
 
     .step-content-center {
       display: flex;
       align-items: center;
       justify-content: center;
+
+      @include mobile {
+        flex-direction: column;
+        justify-content: flex-start;
+        padding-top: 50px;
+        align-items: center;
+        background: transparent;
+        height: 100%;
+        position: absolute;
+        z-index: 5;
+      }
 
       .steps {
         width: 50vw;
@@ -102,6 +181,27 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        @include mobile {
+          align-items: center;
+          position: absolute;
+          height: 0;
+          font-size: 1.3rem;
+          color: black;
+          width: 80vw;
+          font-weight: 500;
+
+          h2 {
+            margin-bottom: 40px;
+            text-align: center;
+          }
+          p {
+          }
+          .button {
+            margin-top: 40px;
+          }
+          .bags {
+          }
+        }
 
         p {
           color: $color-light-grey;
@@ -147,17 +247,14 @@
 
         .bags {
           display: flex;
+          align-items: center;
           flex-direction: row;
+
 
           ::-webkit-details-marker {
             display: none;
           }
 
-          select {
-            width: 100px;
-            margin-left: 10px;
-
-          }
         }
 
         .step-who-help form {
@@ -174,6 +271,9 @@
         .toggle {
           display: flex;
           flex-wrap: wrap;
+          @include mobile {
+            justify-content: center;
+          }
 
           input {
             width: 0;
@@ -210,6 +310,13 @@
         }
 
         .step-text {
+          @include mobile {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+          }
+
           textarea {
             margin-top: 20px;
             width: 200px;
@@ -244,14 +351,20 @@
           display: flex;
           flex-direction: row;
           justify-content: space-around;
-
+          @include mobile {
+            margin-top: 30px;
+          }
           .summary-title {
             margin-bottom: 10px;
             font-weight: bold;
+            font-size: 1.1rem;
           }
 
           .summary-center {
             width: 400px;
+            @include mobile {
+              width: 80%;
+            }
           }
         }
 
@@ -266,9 +379,15 @@
         form {
           display: flex;
           flex-direction: row;
-          justify-content: space-between;
           align-items: center;
           margin: 10px 0;
+          b {
+            font-weight: bold;
+            margin-right: 10px;
+          }
+          @include mobile {
+            justify-content: normal;
+          }
 
           input {
             background: $color-grey-white;
@@ -291,21 +410,31 @@
     }
 
 
-      .back {
-        h3 {
-          font-weight: bold;
-          padding-bottom: 10px;
+    .back {
+      h3 {
+        font-weight: bold;
+        padding-bottom: 10px;
 
-        }
+      }
 
-        .back-info {
-          div {
-            display: flex;
-            align-items: center;
-          }
+      .back-info {
+        div {
+          display: flex;
+          align-items: center;
         }
       }
     }
+  }
+
+  .bags-step2 {
+    margin-left: 50px;
+  }
+
+  .bags-step4 {
+    @include mobile {
+      margin-bottom: 50px
+    }
+  }
 
   .steps-background {
     background-image: url("../public/assets/assets/Background-Form.jpg");
@@ -313,6 +442,38 @@
     background-position: right;
     width: 450px;
     height: 500px;
+    @include mobile {
+      display: none
+    }
+
+    //.step-back {
+    //  width: 100%;
+    //  height: 100%;
+    //}
+  }
+}
+
+.step3-content {
+  @include mobile-mini {
+    margin-bottom: 100px;
+  }
+}
+
+.steps-background-mobile {
+  @include mobile {
+    background-image: url("../public/assets/assets/Background-Form.jpg");
+    background-size: cover;
+    background-position: right;
+    width: 450px;
+    height: 500px;
+    filter: blur(5px) opacity(0.30);
+    display: flex;
+    justify-content: center;
+
+    .step-back {
+      width: 100%;
+      height: 100%;
+    }
   }
 }
 
@@ -321,24 +482,26 @@
   padding-bottom: 20px;
   height: 700px;
 }
+
 .steps-icon4 {
   background-image: url("../public/assets/assets/Icon-4.svg");
 }
 
 .step {
   display: flex;
-justify-content: center;
+  justify-content: center;
   width: 50vw;
   height: 100%;
   flex-direction: column;
 }
 
-  .steps-goodbye {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    h1 {
-      font-size: 1.6rem;
-    }
+.steps-goodbye {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  h1 {
+    font-size: 1.6rem;
   }
+}

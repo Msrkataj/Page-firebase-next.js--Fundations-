@@ -23,12 +23,12 @@ const Step2 = () => {
 
     }, [bags]);
 
-    Step5(bags)
+    // Step5(bags)
 
 
     return (
         <>
-            <HeaderStep/>
+            <HeaderStep Step={"Step2"}/>
             <section className="step-content">
                 <div className="step-content-alert">
                     <h2>Ważne!</h2>
@@ -41,8 +41,8 @@ const Step2 = () => {
                             <h2>Podaj liczbę 60l worków, w które spakowałeś/aś rzeczy:</h2>
                             <form className="bags">
                                 <label>Liczba 60l worków:</label>
-                                <select name="bags" value={bags} onChange={e => setBags(e.target.value)}>
-                                    <option value="hide">--wybierz--</option>
+                                <select name="bags" className="bags-step2" value={bags} onChange={e => setBags(e.target.value)}>
+                                    <option value="" hidden>--Wybierz--</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
@@ -61,6 +61,9 @@ const Step2 = () => {
                         </div>
                         <div className="steps-background"></div>
                     </div>
+                </div>
+                <div className="steps-background-mobile">
+                    <div className="step-back"></div>
                 </div>
             </section>
             <Footer/>

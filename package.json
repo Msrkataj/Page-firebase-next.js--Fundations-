@@ -31,5 +31,18 @@
     "eslint": "8.20.0",
     "eslint-config-next": "12.2.3",
     "sass": "^1.54.0"
-  }
+  },
+  "description": "This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).",
+  "main": "firebase.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Msrkataj/portfolio.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Msrkataj/portfolio/issues"
+  },
+  "homepage": "https://github.com/Msrkataj/portfolio#readme"
 }

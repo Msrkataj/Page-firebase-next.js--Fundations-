@@ -9,7 +9,7 @@ import {
 } from "firebase/auth";
 import { auth } from "/firebase";
 
-const HomeHeader = () => {
+const HomeHeader = ({close}) => {
     const [active, setActive] = useState(false);
     const [user, setUser] = useState({});
 
@@ -37,9 +37,12 @@ const HomeHeader = () => {
     ];
 
 
+    console.log(data[0].name)
+
     useEffect(() => {
         onAuthStateChanged(auth, (currentUser) => {
             setUser(currentUser);
+            close === `close` ? console.log("tak") : console.log("nie")
         });
     }, [])
 
@@ -58,12 +61,11 @@ const HomeHeader = () => {
                     <div className="logo">
                         <FontAwesomeIcon icon={faShirt} className="fa-3x"/>
                     </div>
+                    <h4 style={{display: !user ? "none" : null}}> Witaj: <p>{user?.email}</p> </h4>
                     <div className="menu">
                         <div onClick={() => setActive(!active)}>
                             <div className={active ? "activeHamburger" : "hamburber"}/>
                         </div>
-                        <h4 style={{display: !user ? "none" : null}}> Witaj: <p>{user?.email}</p> </h4>
-
                         <div className="nav">
                             <div className="nav-login">
 
@@ -77,28 +79,38 @@ const HomeHeader = () => {
                                     <a style={{display: !user ? "none" : null}} className="nav-login-button" onClick={logout}>Wyloguj</a>
                                 </Link>
                             </div>
-                        <ul>
+                        <ul style={{display: close ? "none" : null}}>
                             {data.map((item, i) => (
-                                <Scroll to={item.Link} key={i} smooth duraction={500} onClick={handleClick} className="scroll">                                    <li key={i}>
-                                            {item.name}
-                                </li>
+                                <Scroll to={item.Link} key={i} smooth duraction={500} onClick={handleClick} className="scroll">
+                                    <li key={i}>{item.name}</li>
                                 </Scroll>
                             ))}
                         </ul>
+                            <ul style={{display: !close ? "none" : null}}>
+                                <Link href="../">
+                                    <a className="scroll">Home</a>
+                                </Link>
+                            </ul>
                         </div>
                     </div>
-                    <div className={active ? "activeSidenav " : "sidenav "}>
-                        <ul className={"ul"}>
+                    <div className={active ? "activeSidenav " : "sidenav"}>
+                        <ul className="ul" style={{display: close ? "none" : null}}>
                             {data.map((item, i) => (
--                                <Scroll to={item.Link} smooth duraction={500} onClick={handleClick}>
-                                    <li key={i}>
-                                            {item.name}
-                                    </li>
+                                <Scroll to={item.Link} key={i} smooth duraction={500} onClick={handleClick} className="scroll">
+                                    <li key={i}>{item.name}</li>
                                 </Scroll>
                             ))}
                         </ul>
+                        <ul className="home-mobile" style={{display: !close ? "none" : null}}>
+                            <Link href="../">
+                                <a>Home</a>
+                            </Link>
+                        </ul>
                         <Link href="/Login">
-                        <a className="login">ZALOGUJ</a>
+                        <a className="login" style={{display: user ? "none" : null}}>ZALOGUJ</a>
+                        </Link>
+                        <Link href="/Logut">
+                            <a style={{display: !user ? "none" : null}} className="nav-login-button login" onClick={logout}>Wyloguj</a>
                         </Link>
                     </div>
                 </div>

@@ -4,9 +4,11 @@ import HeaderStep from "../Components/Home/HeaderStep";
 import Footer from "../Components/Home/Footer";
 import React, {useEffect, useState} from "react";
 import Step5 from "./Step5";
+import {remove} from "local-storage";
 
 
 const Step3 = () => {
+    const [input, setInput] = useState(false);
 
     const [NameOrganization, SetNameOrganization] = useState(() => {
         // getting stored value
@@ -44,10 +46,11 @@ const Step3 = () => {
     }, [whoHelp, Where, NameOrganization]);
 
 
+
     return (
         <>
-            <HeaderStep/>
-            <section className="step-content">
+            <HeaderStep Step={"Step3"}/>
+            <section className="step-content step3-content">
                 <div className="step-content-alert">
                     <h2>Ważne!</h2>
                     <p>Jeśli wiesz komu chcesz pomóc, możesz wpisać nazwę tej organizacji w wyszukiwarce. Możesz też filtrować organizacje po ich lokalizacji bądź celu ich pomocy.</p>
@@ -57,9 +60,9 @@ const Step3 = () => {
                         <div className="steps">
                             <p>Krok 3/4</p>
                             <h2>Lokalizacja: </h2>
-                            <form className="bags">
-                                <select name="bags" value={Where} onChange={e => SetWhere(e.target.value)}>
-                                    <option value="hide">--wybierz--</option>
+                            <form className="bags bags-step4">
+                                <select  name="bags" value={Where} onChange={e => SetWhere(e.target.value)}>
+                                    <option value="" hidden>--Wybierz--</option>
                                     <option value="Poznań">Poznań</option>
                                     <option value="Warszawa">Warszawa</option>
                                     <option value="Kraków">Kraków</option>
@@ -99,6 +102,9 @@ const Step3 = () => {
                         </div>
                         <div className="steps-background"></div>
                     </div>
+                </div>
+                <div className="steps-background-mobile">
+                    <div className="step-back"></div>
                 </div>
             </section>
             <Footer/>

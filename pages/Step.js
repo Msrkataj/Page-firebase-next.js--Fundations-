@@ -6,6 +6,8 @@ import { useState } from "react";
 import Step5 from "./Step5";
 import Footer from "../Components/Home/Footer";
 import HeaderStep from "../Components/Home/HeaderStep";
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import {faCheck, faShirt} from '@fortawesome/free-solid-svg-icons'
 
 export const useAuthRoute = (Steppp) => {
 
@@ -48,7 +50,6 @@ const Step = ({setIsAuth}) => {
     useEffect(() => {
         // storing input name
         localStorage.setItem("back", JSON.stringify(back));
-
     }, [back]);
 
     const handleTitleChange = (e) => {
@@ -56,10 +57,9 @@ const Step = ({setIsAuth}) => {
            e.target.value)
     };
 
-
-        Step5(country)
-
-    Step5(Steps)
+    //     Step5(country)
+    //
+    // Step5(Steps)
     useAuthRoute(Steps)
 
 
@@ -68,7 +68,7 @@ const Step = ({setIsAuth}) => {
 
     return (
         <>
-           <HeaderStep/>
+           <HeaderStep Step={"Step1"}/>
             <section className="step-content">
                 <div className="step-content-alert">
                 <h2>Ważne!</h2>
@@ -92,8 +92,13 @@ const Step = ({setIsAuth}) => {
                                 </Link>
                             </div>
                         </div>
-                        <div className="steps-background"></div>
+                        <div className="steps-background">
+                            <div className="step-back"></div>
+                        </div>
                     </div>
+                </div>
+                <div className="steps-background-mobile">
+                    <div className="step-back"></div>
                 </div>
             </section>
             <Footer/>

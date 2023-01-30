@@ -14,6 +14,12 @@ const Step4 = () => {
         telephone: ""
     });
 
+    const [Term, setTerm] = useState( {
+        date: "",
+        hours: "",
+        comments: "",
+    });
+
     const handleChange = ({ target }) => {
         setAddress(prev => ({
             ...prev,
@@ -43,7 +49,6 @@ const Step4 = () => {
     }
 
 
-
     // useEffect(() => {
     //     const saved = localStorage.getItem("address")
     //     const initialValue = JSON.parse(saved);
@@ -57,11 +62,12 @@ const Step4 = () => {
     useEffect(() => {
         // storing input name
         localStorage.setItem("address", JSON.stringify(Address));
-    }, [Address]);
+        localStorage.setItem("term", JSON.stringify(Term));
+    }, [Address, Term]);
 
     return (
         <>
-            <HeaderStep/>
+            <HeaderStep Step={"Step4"}/>
             <section className="step-content">
                 <div className="step-content-alert">
                     <h2>Ważne!</h2>
@@ -103,15 +109,24 @@ const Step4 = () => {
                                     <div className="summary-value">
                                         <form>
                                             <label>Data</label>
-                                            <input type="text" id="text" />
+                                            <input type="text" value={Term.date} onChange={e => setTerm(prev => ({
+                                                ...prev,
+                                                date: e.target.value,
+                                            }))}/>
                                         </form>
-                                        <form>
+                                        <form >
                                             <label>Godzina</label>
-                                            <input type="text" id="text" />
+                                            <input type="text" value={Term.hours} onChange={e => setTerm(prev => ({
+                                                ...prev,
+                                                hours: e.target.value,
+                                            }))}/>
                                         </form>
                                         <form>
                                             <label>Uwagi dla kuriera</label>
-                                            <textarea id="message"></textarea>
+                                            <textarea value={Term.comments} onChange={e => setTerm(prev => ({
+                                                ...prev,
+                                                comments: e.target.value,
+                                            }))}></textarea>
                                         </form>
                                     </div>
                                 </div>
@@ -127,6 +142,9 @@ const Step4 = () => {
                         </div>
                         <div className="steps-background"></div>
                     </div>
+                </div>
+                <div className="steps-background-mobile">
+                    <div className="step-back"></div>
                 </div>
             </section>
             <Footer/>

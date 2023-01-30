@@ -6,8 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="85e8d66e-2b3a-4cf7-a094-4b7754db81bf" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Components/Home/HomeThreeColumns.js" beforeDir="false" afterPath="$PROJECT_DIR$/Components/Home/HomeThreeColumns.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Components/Home/FoursSteps.js" beforeDir="false" afterPath="$PROJECT_DIR$/Components/Home/FoursSteps.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Components/Home/Header-first.js" beforeDir="false" afterPath="$PROJECT_DIR$/Components/Home/Header-first.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Components/Home/HeaderStep.js" beforeDir="false" afterPath="$PROJECT_DIR$/Components/Home/HeaderStep.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Components/Home/HomeHeader.js" beforeDir="false" afterPath="$PROJECT_DIR$/Components/Home/HomeHeader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Components/Home/Question.js" beforeDir="false" afterPath="$PROJECT_DIR$/Components/Home/Question.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/Login.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/Register.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/Register.js" afterDir="false" />
@@ -16,8 +20,15 @@
       <change beforePath="$PROJECT_DIR$/pages/Step3.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/Step3.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/Step4.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/Step4.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/Step5.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/Step5.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/_app.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/login.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/Footer.scss" beforeDir="false" afterPath="$PROJECT_DIR$/styles/Footer.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/Home.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/styles/Home.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/styles/Login.scss" beforeDir="false" afterPath="$PROJECT_DIR$/styles/Login.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/Question.scss" beforeDir="false" afterPath="$PROJECT_DIR$/styles/Question.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/Register.scss" beforeDir="false" afterPath="$PROJECT_DIR$/styles/Register.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/Step.scss" beforeDir="false" afterPath="$PROJECT_DIR$/styles/Step.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/settings/mixins.scss" beforeDir="false" afterPath="$PROJECT_DIR$/styles/settings/mixins.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,28 +72,68 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/msrkataj/portfolio&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;SCSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;yarn&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/snap/webstorm/274/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/home/msrkataj/portfolio-zapas/portfolio",
+    "list.type.of.created.stylesheet": "SCSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "yarn",
+    "ts.external.directory.path": "/snap/webstorm/274/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public" />
       <recent name="$PROJECT_DIR$/Components/Home" />
       <recent name="$PROJECT_DIR$/pages" />
       <recent name="$PROJECT_DIR$/Components" />
     </key>
+  </component>
+  <component name="RunManager" selected="npm.start">
+    <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="build" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="dev" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.start" />
+        <item itemvalue="npm.build" />
+        <item itemvalue="npm.dev" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -114,7 +165,14 @@
       <workItem from="1661430503118" duration="1818000" />
       <workItem from="1661858828599" duration="3876000" />
       <workItem from="1661951051069" duration="3347000" />
-      <workItem from="1662050088166" duration="14013000" />
+      <workItem from="1662050088166" duration="14352000" />
+      <workItem from="1662131771241" duration="10386000" />
+      <workItem from="1662396709355" duration="12378000" />
+      <workItem from="1662483611952" duration="6481000" />
+      <workItem from="1662555383956" duration="16663000" />
+      <workItem from="1662646792899" duration="14639000" />
+      <workItem from="1662737163082" duration="4025000" />
+      <workItem from="1675091893295" duration="4526000" />
     </task>
     <servers />
   </component>

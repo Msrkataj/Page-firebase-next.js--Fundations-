@@ -96,7 +96,7 @@ const Login = () => {
 
     return (
         <>
-            <HomeHeader/>
+            <HomeHeader close={true}/>
             <div style={{display: user ? null : "none"}} className="login-menu">
                 <div className="login-content">
                     <h1>Zalogowano pomyślnie</h1>

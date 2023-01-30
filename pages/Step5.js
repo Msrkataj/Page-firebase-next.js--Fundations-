@@ -2,6 +2,16 @@ import Link from 'next/link'
 import HeaderStep from "../Components/Home/HeaderStep";
 import Footer from "../Components/Home/Footer";
 import React, {useEffect, useState} from "react";
+import  { db }  from "../firebase";
+import {
+    collection,
+    getDocs,
+    addDoc,
+    updateDoc,
+    deleteDoc,
+    doc,
+} from "firebase/firestore";
+
 
 const Step5 = (Step1) => {
 
@@ -17,6 +27,17 @@ const Step5 = (Step1) => {
     const initialWhoHelp = JSON.parse(whoHelp);
     const address = localStorage.getItem("address")
     const Address = JSON.parse(address);
+    const nameOrganization = localStorage.getItem("NameOrganization")
+    const NameOrganization = JSON.parse(nameOrganization);
+    const term = localStorage.getItem("term")
+    const Term = JSON.parse(term);
+    const [users, setUsers] = useState([]);
+
+    const usersCollectionRef = collection(db, "form");
+
+    const createUser = async () => {
+        await addDoc(usersCollectionRef, { backs: back,howManyBags: bags, where: Where, whoHelp: whoHelp, address: Address, term: Term, nameOrganization: NameOrganization});
+    };
 
     useEffect(() => {
         const saved = localStorage.getItem("back")
@@ -48,7 +69,7 @@ const Step5 = (Step1) => {
 
     return (
         <>
-            <HeaderStep/>
+            <HeaderStep Step={"StepBye"}/>
             <section className="step-content step5">
                 <div className="step-content-info">
                     <div className="step-content-center">
@@ -74,19 +95,19 @@ const Step5 = (Step1) => {
                                     </div>
                                     <div className="summary-value">
                                         <form>
-                                            <p>Ulica: {Address.street}</p>
+                                            <b>Ulica:</b><p> {Address.street}</p>
                                             <p></p>
                                         </form>
                                         <form>
-                                            <p>Miasto: {Address.city}</p>
+                                            <b>Miasto:</b><p> {Address.city}</p>
                                             <p></p>
                                         </form>
                                         <form>
-                                            <p>Kod pocztowy: {Address.postalCode}</p>
+                                            <b>Kod pocztowy:</b><p> {Address.postalCode}</p>
                                             <p></p>
                                         </form>
                                         <form>
-                                            <p>Numer telefonu: {Address.telephone}</p>
+                                            <b>Numer telefonu:</b><p> {Address.telephone}</p>
                                             <p></p>
                                         </form>
                                     </div>
@@ -97,15 +118,15 @@ const Step5 = (Step1) => {
                                     </div>
                                     <div className="summary-value">
                                         <form>
-                                            <p>Data</p>
+                                            <b>Data:</b><p> {Term.date}</p>
                                             <p></p>
                                         </form>
                                         <form>
-                                            <p>Godzina</p>
+                                            <b>Godzina:</b><p> {Term.hours}</p>
                                             <p></p>
                                         </form>
                                         <form>
-                                            <p>Uwagi dla kuriera</p>
+                                            <b>Uwagi dla kuriera:</b><p> {Term.comments}</p>
                                             <p></p>
                                         </form>
                                     </div>
@@ -116,12 +137,14 @@ const Step5 = (Step1) => {
                                     <a className="btn">Wstecz</a>
                                 </Link>
                                 <Link class href="/StepGoodbye">
-                                    <a className="btn">Potwierdzam</a>
+                                    <a className="btn" onClick={createUser}>Potwierdzam</a>
                                 </Link>
                             </div>
                         </div>
                         <div className="steps-background"></div>
                     </div>
+                </div>
+                <div className="steps-background-mobile">
                 </div>
             </section>
             <Footer/>
