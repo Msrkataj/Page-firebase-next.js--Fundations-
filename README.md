@@ -17,3 +17,7 @@ npm run dev
 
 <a href="https://postimg.cc/tZRt7mVF" target="_blank"><img src="https://i.postimg.cc/tZRt7mVF/Zrzut-ekranu-z-2023-01-30-19-05-15.png" alt="Zrzut-ekranu-z-2023-01-30-19-05-15"/></a><a href="https://postimg.cc/rK9tvprw" target="_blank"><img src="https://i.postimg.cc/rK9tvprw/Zrzut-ekranu-z-2023-01-30-18-57-49.png" alt="Zrzut-ekranu-z-2023-01-30-18-57-49"/></a><a href="https://postimg.cc/3dhvSGWq" target="_blank"><img src="https://i.postimg.cc/3dhvSGWq/Zrzut-ekranu-z-2023-01-30-19-00-16.png" alt="Zrzut-ekranu-z-2023-01-30-19-00-16"/></a><br/><br/>
 <br/><br/>
+
+## Mobile
+
+<a href="https://postimg.cc/3kPkw218" target="_blank"><img src="https://i.postimg.cc/3kPkw218/Zrzut-ekranu-z-2023-01-30-19-28-11.png" alt="Zrzut-ekranu-z-2023-01-30-19-28-11"/></a> <a href="https://postimg.cc/phvyfx33" target="_blank"><img src="https://i.postimg.cc/phvyfx33/Zrzut-ekranu-z-2023-01-30-19-28-15.png" alt="Zrzut-ekranu-z-2023-01-30-19-28-15"/></a> <a href="https://postimg.cc/v1fcxD2W" target="_blank"><img src="https://i.postimg.cc/v1fcxD2W/Zrzut-ekranu-z-2023-01-30-19-29-00.png" alt="Zrzut-ekranu-z-2023-01-30-19-29-00"/></a><br/><br/>
