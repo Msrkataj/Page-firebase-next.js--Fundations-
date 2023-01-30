@@ -1,34 +1,19 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Final project during the JavaScript course.<br/><br/>
+The aim of the project was to create a place where everyone would be able to give away unnecessary things to trusted institutions.<br/>
+The project is a website with a form that will make it easier for users to return items.<br/><br/>
+The website was written in the REACT framework using Next.js and the SASS library, and using a Trello board.<br/>
+It has a home page layout, as well as registration and login with validation and saving data to firebase. <br/>
+After logging in, the next steps of the form are completed and the data is sent to the database.<br/>
+The website is fully responsive, it also has a mobile version or dynamic communication with data from firebase, changing content for another organization.
 
-## Getting Started
-
-First, run the development server:
-
-```bash
+The project start:
+```
 npm run dev
-# or
-yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+<a href="https://postimg.cc/674q56yR" target="_blank"><img src="https://i.postimg.cc/MGdQ5vws/Zrzut-ekranu-z-2023-01-30-18-55-55.png" alt="Zrzut-ekranu-z-2023-01-30-18-55-55"/></a><br/><br/>
+<a href='https://postimg.cc/3yk44Cbk' target='_blank'><img src='https://i.postimg.cc/VNRjhKqW/Zrzut-ekranu-z-2023-01-30-18-57-11.png' border='0' alt='Zrzut-ekranu-z-2023-01-30-18-57-11'/></a>
+<a href="https://postimg.cc/BtHFBpZD" target="_blank"><img src="https://i.postimg.cc/xjFPYpWs/Zrzut-ekranu-z-2023-01-30-18-58-12.png" alt="Zrzut-ekranu-z-2023-01-30-18-58-12"/></a><br/><br/>
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+<a href="https://postimg.cc/tZRt7mVF" target="_blank"><img src="https://i.postimg.cc/tZRt7mVF/Zrzut-ekranu-z-2023-01-30-19-05-15.png" alt="Zrzut-ekranu-z-2023-01-30-19-05-15"/></a><a href="https://postimg.cc/rK9tvprw" target="_blank"><img src="https://i.postimg.cc/rK9tvprw/Zrzut-ekranu-z-2023-01-30-18-57-49.png" alt="Zrzut-ekranu-z-2023-01-30-18-57-49"/></a><a href="https://postimg.cc/3dhvSGWq" target="_blank"><img src="https://i.postimg.cc/3dhvSGWq/Zrzut-ekranu-z-2023-01-30-19-00-16.png" alt="Zrzut-ekranu-z-2023-01-30-19-00-16"/></a><br/><br/>
+<br/><br/>
